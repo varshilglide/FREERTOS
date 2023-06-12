@@ -1,0 +1,51 @@
+Q. What is Semaphore?
+--> Semaphore is an integer variable that solves the critical section problem.
+--> After initialization, it can only be accessed by two atomic operations.
+
+	(1) wait(s)
+	    {
+		while(s <= 0);
+		s = s - 1;
+	    }
+
+	(2) signal(s)
+	    {
+		s = s + 1;
+	    }
+
+--> Two Types of semaphores are there.
+	(1) Binary Semaphores --> values: 0 and 1
+	(2) Counting Semaphores --> values: -infinity to +infinity
+
+--> Semaphores manage concurrent processes using an Integer Value (Variable).
+--> Initial value of the semaphore variable is 1.
+
+--> Semaphore is simply a variable that is non-negative and shared between threads. This variable is used to solve the critical section and to achieve process synchronization in the
+    multiprocessing environment.
+--> A Semaphore S is an integer variable that, apart from initialization, is accessed only through two standard atomic operations: wait() and signal().
+--> All the modifications to the integer value of the semaphore in the wait() and signal() operations must be executed indivisibly. That is, when one process modifies the semaphore 
+    value, no other process can simultaneously modify that same semaphore value.
+
+--> Definition of wait():
+
+P(Semaphore S)
+{	
+while(S <= 0)
+; //no operations
+S--;
+}
+
+--> Definition of Signals():
+
+V(Semaphore S)
+{
+S++;
+}
+
+
+--> Types of Semaphores:
+
+1. Binary Semaphore:
+--> The value of a binary semaphore can range only between 0 and 1. On some systems, binary semaphores are known as mutex locks, as they are locks that provide mutual exclusion.
+
+

@@ -1,0 +1,22 @@
+1. Error:
+--> undefined reference to `vApplicationGetIdleTaskMemory'
+--> undefined reference to `vApplicationGetTimerTaskMemory'
+--> ./ThirdParty/FREERTOS/org/tasks.o: in function `vTaskStartScheduler'
+--> ./ThirdParty/FREERTOS/org/timers.o: in function `xTimerCreateTimerTask'
+
+Solution:
+
+--> Go to FreeRTOSConfig.h file and [#define configSUPPORT_STATIC_ALLOCATION] change it from 1 to 0. 
+
+Reason for error:
+
+--> If configSUPPORT_STATIC_ALLOCATION is set to 1 then RTOS objects can be created using RAM provided by the application writer and in that case we have to provide two callback functions vApplicationGetIdleTaskMemory() to provide the memory for use by the RTOS Idle task and vApplicationGetTimerTaskMemory() to provide memory for use by the RTOS Daemon/Timer Service task.
+
+--> If configSUPPORT_STATIC_ALLOCATION is set to 0 then RTOS objects can only be created using RAM allocated from the FreeRTOS heap.
+
+2. Error:
+--> undefined reference to `xTaskCreate'
+
+Solution:
+
+--> Exclude tick project files from project properties. 

@@ -1,0 +1,28 @@
+1. Task Create in FreeRTOS:
+
+Syntax:
+
+xTaskCreate(MyTask_pointer, "task_name", stack_depth, Parameter, Priority, TaskHandle)
+
+==> MyTask_pointer --> It is pointer to task entry function. we need to define the task with certain function so, it is just the name of the function which is used while creating a task.
+
+==> task_name --> A descriptive name for the task. This is mainly used to facilitate debugging.
+
+==> stack_depth --> The size of the task stack specified as the number of variables the stack can hold-not the number of bytes. 
+
+==> Parameter --> Pointer that will be used as the parameter for the task being created. If we want to pass a pointer to variable as an argument to the task function, we can use this argument. Otherwise, we can pass the NULL value.
+
+==> Priority --> If we create any task than its priority is very important to be set. The priority of any task is set by user according to its complexity and the requirement of the project.
+                 For example, if we create four tasks and assign them priority 0,1,2,3. Hence, zero means the lowest priority and 3 means the highest priority.
+
+==> TaskHandle --> It is used to pass a handle to the created task. This argument keeps the handle of the function that we can use to change function features such as the deletion of a task,  
+                   changing its priority, etc.
+
+
+2. Important Functions in FREERTOS:
+
+--> xTaskCreate() - for task creation
+--> vTaskSuspend() - for task suspension
+--> vTaskResume() - for resuming the task
+--> vTaskDelay() - for delaying a task
+--> vTaskDelete() - for deleting a task

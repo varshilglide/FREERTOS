@@ -1,0 +1,27 @@
+Features of Nucleo-F429ZI St-Link:
+
+==> Common features: 
+
+---> STM32 microcontroller in an LQFP144 package
+---> 3 user LEDs
+---> 2 user and reset push-buttons
+---> 32.768 kHz crystal oscillator
+
+==> Board connectors:
+
+---> SWD
+---> ST Zio expansion connector including ARDUINO® Uno V3
+---> ST morpho expansion connector
+---> Flexible power-supply options: ST-LINK USB VBUS, USB connector, or external sources
+---> On-board ST-LINK debugger/programmer with USB re-enumeration capability: mass storage, Virtual COM port, and debug port
+---> Comprehensive free software libraries and examples available with the STM32Cube MCU Package
+---> Support of a wide choice of Integrated Development Environments (IDEs) including IAR Embedded Workbench®, MDK-ARM, and STM32CubeIDE
+---> Board-specific features
+---> External or internal SMPS to generate Vcore logic supply
+---> Ethernet compliant with IEEE-802.3-2002
+---> USB OTG full speed or SNK/UFP (full-speed or high-speed mode), depending on the USB connector type
+
+==> Board connectors:
+
+---> USB with Micro-AB or USB Type-C®
+---> Ethernet RJ45

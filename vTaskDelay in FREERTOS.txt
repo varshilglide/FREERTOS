@@ -1,0 +1,22 @@
+--> Syntax for delay():
+
+vTaskDelay(1000); 
+--> It gives 1 second delay. but in this it is not give us accurate 1 sec delay so for that below syntax gives us accurate 1 sec delay.
+
+vTaskDelay(1000*configTICK_RATE_HZ / 1000);
+--> It gives us accurate delay of 1 sec. But still here It did not give us accurate delay and delay is arround sometimes 1000, 1010 , 1015 miliseconds.
+
+==> So for precise result of it we using Delayuntil function.
+
+void myTask1 (void *p)
+{
+TickType_t myLastUnblock;
+myLastUnblock = xTaskGetTickCount();
+int count = 0;
+
+while(1)
+{
+printf("hello, world!: %d\r\n", count++);
+vTaskDelayUntil(&myLastUnblock, 1000 * configTICK_RATE_HZ / 1000);
+}
+}
